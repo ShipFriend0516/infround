@@ -2,9 +2,20 @@ import { MdAccountCircle, MdSettings } from 'react-icons/md';
 import { IconContext } from 'react-icons';
 import { useNavigate } from 'react-router-dom';
 import logoImage from '../img/infround-logo.jpg'
+import { useState } from 'react';
+import LoginModal from './LoginModal';
 
 const NavBar = () => {
   const navigate = useNavigate()
+  const [showModal, setShowModal] = useState(false);
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <nav className="navbar bg-body-tertiary">
@@ -21,7 +32,7 @@ const NavBar = () => {
             <input 
               className="form-control me-2 col-lg-4" 
               type="search" 
-              placeholder="점수를 측정할 장소를 검색"
+              placeholder="장소를 검색해보세요"
               aria-label="Search"/>
             <button 
               className="btn btn-outline-success" 
@@ -29,12 +40,16 @@ const NavBar = () => {
           </div>
         </form>
         <div className='d-flex flex-grow-1 justify-content-end'>
-            <button className='btn'>
+            <button 
+              onClick={handleOpenModal}
+              className='btn'>
               <IconContext.Provider value={{size:2+'em'}}>
                 <MdAccountCircle/>
               </IconContext.Provider>
+              <LoginModal show={showModal} handleClose={handleCloseModal} />
             </button>
-            <button className='btn'>
+            <button 
+              className='btn'>
               <IconContext.Provider value={{size:2+'em'}}>
                 <MdSettings/>
               </IconContext.Provider>
