@@ -1,6 +1,7 @@
 import { MdAccountCircle, MdSettings } from 'react-icons/md';
 import { IconContext } from 'react-icons';
 import { useNavigate } from 'react-router-dom';
+import logoImage from '../img/infround-logo.jpg'
 
 const NavBar = () => {
   const navigate = useNavigate()
@@ -15,7 +16,7 @@ const NavBar = () => {
               onClick={()=> {
                 navigate('/')
               }}>
-              <img src='img/infround-logo.jpg' alt="로고 이미지" className="img-fit rounded" />
+              <img src={logoImage} alt="로고 이미지" className="img-fit rounded" />
             </button>
             <input 
               className="form-control me-2 col-lg-4" 
