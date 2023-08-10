@@ -1,7 +1,5 @@
-import Cover from './Components/Cover'
-import Map from './Components/Map'
 import HomePage from './Pages/HomePage'
-
+import MapPage from './Pages/MapPage'
 const routes = [
   {
     path: '/',
@@ -9,7 +7,7 @@ const routes = [
   },
   {
     path: '/map',
-    element: <Map/>
+    element: <MapPage/>
   }
 ]
 

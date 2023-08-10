@@ -28,6 +28,10 @@ code {
   font-weight: 800;
 }
 
+.jamsil-light {
+  font-family: 'TheJamsil1Bold';
+}
+
 .my-primary {
   background-color: #576CBC;
 }
@@ -40,3 +44,33 @@ code {
   background-color: #19376D;
 }
 
+.img-fit {
+  width: auto;
+  height: 40px;
+  object-fit: cover;
+}
+
+
+/* 애니메이션 */
+/* 애니메이션 클래스 설정 */
+.cover-transition-enter {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.cover-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.cover-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cover-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 500ms, transform 500ms;
+}

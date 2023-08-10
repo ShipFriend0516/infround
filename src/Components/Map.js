@@ -1,9 +1,9 @@
-import NavBar from './NavBar'
+
 
 const Map = () => {
   return (
     <div>
-      <NavBar/>
+      지도
     </div>
   )
 }

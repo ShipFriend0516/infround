@@ -1,29 +1,38 @@
+import { useState } from 'react';
+import {CSSTransition} from 'react-transition-group'
+
 const Cover = () => {
+
+  const [showCover, setShowCover] = useState(true);
+
+  const handleStartButtonClick = () => {
+    setShowCover(false);
+  };
+
+  const onClickButton = () => {
+    
+  }
+
   return (
-    <div className='container-fluid my-primary'>
-      <h1 className='jamsil-bold'>내 주변 모든 인프라!</h1>
-      <div id="carouselExample" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="..." class="d-block w-100" alt="..."/>
+    <CSSTransition in={showCover} className='cover-transition' timeout={500} unmountOnExit>
+      <div className='d-flex container-fluid flex-column cover my-primary align-items-center'>
+        <div className='d-flex flex-row align-items-center justify-content-evenly'>
+          <div className='d-flex flex-column'>
+            <h1 className='jamsil-bold text-center text-white fs-1'>내 주변 인프라를 점수로?</h1>
+            <h1 className='jamsil-light text-left text-white'>인프라운드</h1>
+          </div>
+          <img src='img\infround-logo.jpg' 
+              alt="인프라운드 로고"
+              style={{width: 300+'px'}}/>
         </div>
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="..."/>
-        </div>
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="..."/>
-        </div>
+
+        <button 
+          id='startButton' 
+          className='btn btn-primary my-sub1 border-0'
+          onClick={handleStartButtonClick}
+          >바로 시작하기</button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    </div>
+    </CSSTransition>
   )
 }
 
