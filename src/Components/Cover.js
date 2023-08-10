@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {CSSTransition} from 'react-transition-group'
+import logoImage from '../img/infround-logo.jpg'
 
 const Cover = () => {
 
@@ -19,7 +20,7 @@ const Cover = () => {
           <h1 className='jamsil-bold text-center text-white fs-1'>내 주변 인프라를 점수로?</h1>
           <h1 className='jamsil-light text-left text-white'>인프라운드</h1>
         </div>
-        <img src='img\infround-logo.jpg' 
+        <img src={logoImage}
             alt="인프라운드 로고"
             style={{width: 300+'px'}}/>
       </div>
