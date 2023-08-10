@@ -22,7 +22,6 @@ const NavBar = () => {
               className="form-control me-2 col-lg-4" 
               type="search" 
               placeholder="점수를 측정할 장소를 검색"
-              size
               aria-label="Search"/>
             <button 
               className="btn btn-outline-success" 
