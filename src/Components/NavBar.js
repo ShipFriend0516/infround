@@ -11,10 +11,12 @@ const NavBar = () => {
 
   const handleOpenModal = () => {
     setShowModal(true);
+    console.log('모달 시작')
   };
 
   const handleCloseModal = () => {
     setShowModal(false);
+    console.log('모달 종료')
   };
 
   return (
@@ -46,7 +48,7 @@ const NavBar = () => {
               <IconContext.Provider value={{size:2+'em'}}>
                 <MdAccountCircle/>
               </IconContext.Provider>
-              <LoginModal show={showModal} handleClose={handleCloseModal} />
+              
             </button>
             <button 
               className='btn'>
@@ -55,6 +57,7 @@ const NavBar = () => {
               </IconContext.Provider>
             </button>
           </div>
+          <LoginModal show={showModal} handleClose={handleCloseModal} />
       </div>
     </nav>
   )

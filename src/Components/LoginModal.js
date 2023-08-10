@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap'; // 부트스트랩의 모달 및 폼 관련 컴포넌트를 사용
 import propTypes from 'prop-types'
+
 const LoginModal = ({ show, handleClose }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showModal, setShowModal] = useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -14,17 +14,13 @@ const LoginModal = ({ show, handleClose }) => {
     setPassword(e.target.value);
   };
 
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
   const handleLogin = () => {
     // 로그인 로직을 여기에 추가하십시오.
     console.log('로그인 시도:', email, password);
   };
 
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal className='modal' show={show} onHide={handleClose} centered>
       <Modal.Header closeButton>
         <Modal.Title>로그인</Modal.Title>
       </Modal.Header>
@@ -41,7 +37,7 @@ const LoginModal = ({ show, handleClose }) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button variant="secondary" data-bs-dismiss="modal" onClick={handleClose}>
           취소
         </Button>
         <Button variant="primary" onClick={handleLogin}>
