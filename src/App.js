@@ -1,12 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
-import Cover from './Pages/Cover';
+import Cover from './Components/Cover';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route, 
+} from 'react-router-dom'
+import routes from './routes'
 
 function App() {
   return (
-    <div className="App">
-      <h1 className='jamsil-bold'>내 주변 모든 인프라!</h1>
-    </div>
+    <Router>
+      <div className="App">
+      </div>
+      <div>
+        <Routes>
+          {
+            routes.map((route)=>{
+              return <Route
+                key={route.path}
+                path={route.path}
+                element={route.element}/>
+            })
+          }
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
