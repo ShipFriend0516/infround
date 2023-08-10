@@ -1,9 +1,9 @@
-
+import mapImage from '../img/map.JPG'
 
 const Map = () => {
   return (
     <div>
-      지도
+      <img src={mapImage} className='mapImg'></img>
     </div>
   )
 }

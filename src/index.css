@@ -50,6 +50,14 @@ code {
   object-fit: cover;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* 맵 이미지 */
+.mapImg {
+  height: 100vh;
+}
 
 /* 애니메이션 */
 /* 애니메이션 클래스 설정 */
