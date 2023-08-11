@@ -3,12 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import logoImage from '../img/infround-logo.jpg'
 
 const Cover = () => {
-
-  const [showCover, setShowCover] = useState(true);
   const navigate = useNavigate()
 
   const handleStartButtonClick = () => {
-    setShowCover(false);
     navigate('/map')
   };
 
