@@ -8,6 +8,7 @@
     background-color: white;
 }
 .sidebar {
+    /* overflow-y: visible; */
     background-color: white;
     border-left: 0px solid #202020;
     position: fixed;
@@ -26,12 +27,13 @@
     /* left: calc(var(--sideBarWidth)-10px); */
     left: var(--sideBarWidth);
     z-index: 99;
-    transition: 0.8s ease;
+    /* transition: 0.8s ease; */
     border: 0px solid #20202000;
     border-radius:0 40px 40px 0;
     fill: white;
     background-color: var(--primary-color);
     overflow: hidden;
+    cursor: pointer;
 }
 .openBtn {
     width: 100%;
