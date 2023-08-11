@@ -51,6 +51,9 @@ const NavBar = () => {
               
             </button>
             <button 
+              onClick={()=> {
+                navigate('/map/setting')
+              }}
               className='btn'>
               <IconContext.Provider value={{size:2+'em'}}>
                 <MdSettings/>

@@ -26,7 +26,7 @@ const Cover = () => {
 
       <button 
         id='startButton' 
-        className='btn btn-primary my-sub1 border-0'
+        className='btn btn-primary my-sub1 border-0 py-2'
         onClick={handleStartButtonClick}
         >바로 시작하기</button>
     </div>
