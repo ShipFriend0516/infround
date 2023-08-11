@@ -1,6 +1,7 @@
 import HomePage from './Pages/HomePage'
 import MapPage from './Pages/MapPage'
 import SettingPage from './Pages/SettingPage'
+import ErrorPage from './Pages/ErrorPage'
 
 const routes = [
   {
@@ -14,6 +15,10 @@ const routes = [
   {
     path: '/setting',
     element: <SettingPage/>
+  },
+  {
+    path: '*',
+    element: <ErrorPage/>
   }
 ]
 
