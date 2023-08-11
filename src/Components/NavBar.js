@@ -20,7 +20,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="navbar bg-body-tertiary">
+    <nav className="navbar bg-body-tertiary zIndex2">
       <div className="container-fluid d-flex justify-content-between align-items-center">
         <form className="d-flex" role="search">
           <div className="d-flex">
@@ -41,7 +41,7 @@ const NavBar = () => {
               type="submit">Search</button>
           </div>
         </form>
-        <div className='d-flex flex-grow-1 justify-content-end'>
+        <div className='d-flex justify-content-end'>
             <button 
               onClick={handleOpenModal}
               className='btn'>

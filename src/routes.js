@@ -12,7 +12,7 @@ const routes = [
     element: <MapPage/>
   },
   {
-    path: '/map/setting',
+    path: '/setting',
     element: <SettingPage/>
   }
 ]

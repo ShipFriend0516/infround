@@ -1,10 +1,15 @@
+
+:root {
+    --sideBarWidth: 480px;
+}
+
 /* 사이드바 */
 .container {
-    background-color: #E3ECF1;
+    background-color: white;
 }
 .sidebar {
-    background-color: #E3ECF1;
-    border-left: 4px solid #202020;
+    background-color: white;
+    border-left: 0px solid #202020;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -12,18 +17,20 @@
     transition: 0.4s ease;
     color: #202020;
     height: 100%;
-    z-index: 99;
+    box-shadow: 0px 0px 15px gray;
+
 }
 .button {
-    position: relative;
-    left: 330px;
-    top: 10px;
-    width: 40px;
-    height: 40px;
+    position: fixed;
+    top: 50vh;
+    /* left: calc(var(--sideBarWidth)-10px); */
+    left: var(--sideBarWidth);
     z-index: 99;
     transition: 0.8s ease;
-    border: 2px solid #202020;
-    border-radius: 40px;
+    border: 0px solid #20202000;
+    border-radius:0 40px 40px 0;
+    fill: white;
+    background-color: var(--primary-color);
     overflow: hidden;
 }
 .openBtn {
@@ -31,11 +38,13 @@
     height: 100%;
 }
 .content {
-    padding: 40px 40px 0 20px;
+    /* padding: 100px 0px; */
     position: relative;
     width: 100%;
+    overflow:hidden;
 }
 .icon {
     margin: 0;
     color: #202020;
 }
+
