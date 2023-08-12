@@ -1,0 +1,19 @@
+{
+  "accounts": [
+    {
+      "id": "aaaa",
+      "pw": "bbbb",
+      "accountId": 1
+    }
+
+  ],
+  "infraPoints": [
+    {
+      "LatLng": {
+        "lat": 36.7944083898889,
+        "lng": 127.15850841670996
+      },
+      "name": "천안시"
+    }
+  ] 
+}

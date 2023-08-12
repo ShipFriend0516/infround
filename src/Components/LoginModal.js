@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap'; // 부트스트랩의 모달 및 폼 관련 컴포넌트를 사용
 import propTypes from 'prop-types'
+import axios from 'axios'
 
 const LoginModal = ({ show, handleClose }) => {
   const [email, setEmail] = useState('');
@@ -15,8 +16,20 @@ const LoginModal = ({ show, handleClose }) => {
   };
 
   const handleLogin = () => {
-    // 로그인 로직을 여기에 추가하십시오.
-    console.log('로그인 시도:', email, password);
+  
+    // JSON 서버에서 사용자 정보 가져오기
+    axios.get(`http://localhost:3001/accounts?_id=${email}`).then((res) => {
+      const matchingAccounts = res.data;
+  
+      if (matchingAccounts.length > 0) {
+        console.log("일치하는 계정이 존재합니다.");
+        const firstMatchingAccount = matchingAccounts[0];
+        console.log("일치하는 첫 번째 계정 정보:", firstMatchingAccount);
+        // 여기서 비밀번호와의 일치 여부 등을 확인할 수 있습니다.
+      } else {
+        console.log("일치하는 계정이 없습니다.");
+      }
+    });
   };
 
   return (
