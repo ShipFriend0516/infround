@@ -2,9 +2,9 @@ import propTypes from 'prop-types'
 import { IconContext } from 'react-icons'
 
 // 아이콘 리스트
-import { MdLocalConvenienceStore } from 'react-icons/md'
-import { MdLocalGasStation } from 'react-icons/md'
-import { MdMic } from 'react-icons/md'
+// import { MdLocalConvenienceStore } from 'react-icons/md'
+// import { MdLocalGasStation } from 'react-icons/md'
+// import { MdMic } from 'react-icons/md'
 
 const InfraElement = ({infraName, infraScore, infraIcon}) => {
     return (
