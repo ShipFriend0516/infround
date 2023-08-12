@@ -52,8 +52,7 @@ const SideBar = ({ width=480 ,children }) => {
 
     return (
         <div className={styles.container + 'zIndex1'}>
-            <div ref={side}  className={styles.sidebar} style={{ width: `${width}px`, height: '100%',  transform: `translatex(${-xPosition}px)`}}>
-                    {!isOpen ? 
+            <div style={{transition:'transform 0.4s', width: `${width}px`, height: '100%',  transform: `translatex(${-xPosition}px)`}}>{!isOpen ? 
                         <IconContext.Provider value={{size:'2em'}}>
                             <BsFillCaretRightFill onClick={(e) => toggleMenu(e)}
                                 className={styles.button}/>
@@ -63,8 +62,12 @@ const SideBar = ({ width=480 ,children }) => {
                             <BsFillCaretLeftFill onClick={(e) => toggleMenu(e)}
                                 className={styles.button}/>
                         </IconContext.Provider> 
-                    }
+                }
+            </div>
+            <div ref={side}  className={styles.sidebar} style={{ width: `${width}px`, height: '100%',  transform: `translatex(${-xPosition}px)`}}>
+                
                 <div className={styles.content + 'container py-5 mt-4 px-3 jamsil-light'}>
+                    
                     <div>
                         <div className='fs-4 jamsil-bold'>충청남도 천안시 동남구 신부동</div>
                         <div className='fs-5 jamsil-light'>충남 천안시 동남구 만남로 43 1층</div>
@@ -115,6 +118,7 @@ const SideBar = ({ width=480 ,children }) => {
                                     infraName='영화관' 
                                     infraScore={8} 
                                     infraIcon={<MdMovie/>}/>
+                                
 
                             </div>
                         </div>

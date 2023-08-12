@@ -8,7 +8,8 @@
     background-color: white;
 }
 .sidebar {
-    /* overflow-y: visible; */
+    overflow-y: scroll;
+
     background-color: white;
     border-left: 0px solid #202020;
     position: fixed;
@@ -40,10 +41,11 @@
     height: 100%;
 }
 .content {
+    overflow-y: scroll;
     /* padding: 100px 0px; */
     position: relative;
     width: 100%;
-    overflow:hidden;
+    /* overflow:hidden; */
 }
 .icon {
     margin: 0;
