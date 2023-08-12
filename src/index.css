@@ -69,14 +69,17 @@ code {
 .mapImg {
   height: 100vh;
 }
-
-.zIndex1 {
+/* .zIndex1 {
   z-index: 1;
 }
 
 .zIndex2 {
   z-index: 2;
 }
+
+.zIndex3 {
+  z-index: 3;
+} */
 
 .footer {
   position: fixed;
@@ -129,4 +132,6 @@ code {
   transform: translateY(-100%);
   transition: opacity 500ms, transform 500ms;
 }
+
+
 

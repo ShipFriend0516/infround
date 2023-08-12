@@ -8,7 +8,7 @@
     background-color: white;
 }
 .sidebar {
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 
     background-color: white;
     border-left: 0px solid #202020;
@@ -24,10 +24,10 @@
 }
 .button {
     position: fixed;
-    top: 50vh;
-    /* left: calc(var(--sideBarWidth)-10px); */
+    top: 45vh;
+    
     left: var(--sideBarWidth);
-    z-index: 99;
+    z-index: 2;
     /* transition: 0.8s ease; */
     border: 0px solid #20202000;
     border-radius:0 40px 40px 0;

@@ -9,8 +9,8 @@ const MapPage = () => {
 
     return (
         <div>
-            <NavBar className='zIndex2'/>
-            <SideBar className='zIndex1' />
+            <NavBar/>
+            <SideBar/>
             
             <Map/>
         </div>

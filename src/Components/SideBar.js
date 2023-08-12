@@ -51,16 +51,16 @@ const SideBar = ({ width=480 ,children }) => {
     })
 
     return (
-        <div className={styles.container + 'zIndex1'}>
+        <div className={`${styles.container} navbar z-2 py-0`}>
             <div style={{transition:'transform 0.4s', width: `${width}px`, height: '100%',  transform: `translatex(${-xPosition}px)`}}>{!isOpen ? 
                         <IconContext.Provider value={{size:'2em'}}>
                             <BsFillCaretRightFill onClick={(e) => toggleMenu(e)}
-                                className={styles.button}/>
+                                className={`${styles.button} z-3`}/>
                         </IconContext.Provider> 
                     : 
                         <IconContext.Provider value={{size:'2em'}}>
                             <BsFillCaretLeftFill onClick={(e) => toggleMenu(e)}
-                                className={styles.button}/>
+                                className={`${styles.button} z-3`}/>
                         </IconContext.Provider> 
                 }
             </div>
