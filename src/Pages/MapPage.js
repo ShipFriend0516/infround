@@ -1,20 +1,15 @@
-import NavBar from '../Components/NavBar'
-import Map from '../Components/Map'
-import SideBar from '../Components/SideBar'
-
-
+import NavBar from "../Components/NavBar";
+import SideBar from "../Components/SideBar";
+import KakaoMap from "../Components/KakaoMap";
 
 const MapPage = () => {
-    
+  return (
+    <div>
+      <NavBar />
+      <SideBar />
+      <KakaoMap />
+    </div>
+  );
+};
 
-    return (
-        <div>
-            <NavBar/>
-            <SideBar/>
-            
-            <Map/>
-        </div>
-    )
-}
-
-export default MapPage
+export default MapPage;
