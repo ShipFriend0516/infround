@@ -61,6 +61,10 @@ code {
   object-fit: cover;
 }
 
+.coverLogo {
+  width: 20vw;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -135,3 +139,33 @@ code {
 
 
 
+/* 맵 */
+.customOveray {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infraCircle {
+  transition: width .5s ease-in-out;
+  /* width: 0px; */
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: tomato;
+  opacity: .4;
+  z-index: 2;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-100%,-100%); */
+}
+
+@media (max-width: 768px) {
+  .mobileNone {
+    display: none;
+  }
+
+  .coverLogo {
+    width: 320px;
+  }
+}
