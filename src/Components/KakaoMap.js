@@ -3,7 +3,7 @@ import SideBar from "./SideBar";
 import { Circle, CustomOverlayMap, Map, MapMarker, ZoomControl } from "react-kakao-maps-sdk";
 const { kakao } = window;
 const KakaoMap = () => {
-  const [position, setPosition] = useState();
+  const [position, setPosition] = useState({ lnt: 36, lng: 127 });
   const mapRef = useRef(null);
 
   const [info, setInfo] = useState("");
@@ -42,53 +42,34 @@ const KakaoMap = () => {
     setInfo(message);
   };
 
-  // const distancePerLevel = (mapRef, position) => {
-  //   let map = mapRef.current;
-  //   let proj = map.getProjection();
+  function isWithin200mRadius(centerLat, centerLon, lat1, lon1) {
+    // 지구의 반지름 (미터)
+    const earthRadius = 6371000;
 
-  //   // 지도 중심 좌표를 중심으로 하는 사각형을 구하려고 함
-  //   // center에 지도 중심 말고 원하는 좌표를 넣으면 됨
-  //   let center = position;
-  //   let level = map.getLevel();
+    // 중심 좌표와 주어진 좌표 사이의 차이를 라디안으로 계산
+    const lat1Rad = (lat1 - centerLat) * (Math.PI / 180);
+    const lon1Rad = (lon1 - centerLon) * (Math.PI / 180);
 
-  //   // 지도 레벨마다 m값에 해당하는 화면좌표 수치(px)를 구할 수 있으므로
-  //   // 지도 중심의 좌표를 화면좌표로 투영시켜
-  //   // 화면좌표 기준으로 계산할 예정
-  //   let centerPoint = proj.pointFromCoords(center);
+    // 위도 차이의 제곱 + 경도 차이의 제곱
+    const distance = Math.sqrt(lat1Rad * lat1Rad + lon1Rad * lon1Rad);
 
-  //   // 3레벨에서 1px이 1m
-  //   // 현재 지도 레벨을 기준으로 m당 px값 스케일(px/m)을 구한다.
-  //   let scale = 1 / Math.pow(2, level - 3);
+    // 결과값이 200 미터 이하인 경우 참을 반환, 그렇지 않으면 거짓 반환
+    return distance * earthRadius <= 200;
+  }
 
-  //   // 구하고자 하는 사각형 한 변의 길이: 25미터
-  //   let len = 25;
+  // 예시 사용법
+  const lat1 = 36.85075400414; // 테스트할 위도
+  const lon1 = 127.1503721; // 테스트할 경도
 
-  //   // 12.5m에 해당하는 화면좌표(px) 값
-  //   let radius = (len / 2) * scale;
-
-  //   let swPoint = new daum.maps.Point(
-  //     centerPoint.x - pixelForHalfLen,
-  //     centerPoint.y + pixelForHalfLen
-  //   );
-  //   let nwPoint = new daum.maps.Point(
-  //     centerPoint.x + pixelForHalfLen,
-  //     centerPoint.y - pixelForHalfLen
-  //   );
-
-  //   // 화면좌표를 다시 지도의 좌표계 좌표로 변환
-  //   let sw = proj.coordsFromPoint(swPoint);
-  //   let ne = proj.coordsFromPoint(nwPoint);
-
-  //   let rectangleBounds = new daum.maps.LatLngBounds(sw, ne);
-
-  //   let rectangle = new daum.maps.Rectangle({
-  //     map: map,
-  //     bounds: rectangleBounds,
-  //   });
-  // };
+  if (isWithin200mRadius(position.lat, position.lng, lat1, lon1)) {
+    console.log("주어진 좌표는 200m 반경 내에 있습니다.");
+  } else {
+    console.log("주어진 좌표는 200m 반경 밖에 있습니다.");
+  }
 
   return (
     <Map
+      level={5}
       center={{ lat: 36.815129, lng: 127.1138939 }}
       style={{ width: "100%", height: "100vh" }}
       onClick={(_t, mouseEvent) => {
@@ -111,22 +92,32 @@ const KakaoMap = () => {
           <div className="d-flex flex-row bg-body-tertiary shadow-lg px-4 py-3 rounded">
             <div className="image"></div>
             <div className="d-flex flex-column">
-              <h4>건물 이름</h4>
-              <p>이곳의 인프라 점수는 8점입니다.</p>
+              <h4>
+                <b>인프라 점수</b>
+              </h4>
+              <p>
+                이곳의 인프라 점수는{" "}
+                <span style={{ color: "forestgreen", fontWeight: "bold" }}>80</span>점입니다.
+                <br></br>
+                점수의 세부를 확인하려면 왼쪽의 사이드바를 열어보세요!
+              </p>
             </div>
           </div>
         </CustomOverlayMap>
       )}
       {position && (
-        <CustomOverlayMap className="customOverlay" position={position}>
-          <Circle
-            center={position}
-            radius={200}
-            fillColor={"#FF8080"}
-            fillOpacity={0.4}
-            strokeWeight={0}
-          ></Circle>
-        </CustomOverlayMap>
+        <div className="infraOverlay">
+          <CustomOverlayMap className="customOverlay" position={position}>
+            <Circle
+              className={`infraCircle`}
+              center={position}
+              radius={200}
+              fillColor={"#FF8080"}
+              fillOpacity={0.4}
+              strokeWeight={0}
+            ></Circle>
+          </CustomOverlayMap>
+        </div>
       )}
     </Map>
   );

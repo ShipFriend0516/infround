@@ -147,17 +147,26 @@ code {
   align-items: center;
 }
 
-.infraCircle {
-  transition: width .5s ease-in-out;
-  /* width: 0px; */
+.infraOverlay svg {
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background-color: tomato;
-  opacity: .4;
   z-index: 2;
-  /* top: 50%;
-  left: 50%; */
-  /* transform: translate(-100%,-100%); */
+  animation-name: scaling;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-duration: .5s;
+  transform-origin: 0%;
+}
+
+@keyframes scaling {
+  from {
+    transform: scale(0);
+  }
+  
+  to {
+
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 768px) {
