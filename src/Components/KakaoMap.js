@@ -111,8 +111,13 @@ const KakaoMap = () => {
           <div className="d-flex flex-row bg-body-tertiary shadow-lg px-4 py-3 rounded">
             <div className="image"></div>
             <div className="d-flex flex-column">
-              <h4>건물 이름</h4>
-              <p>이곳의 인프라 점수는 8점입니다.</p>
+              <h4 style={{ fontWeight: "bold" }}>인프라 점수</h4>
+              <p>
+                이곳의 인프라 점수는{" "}
+                <span style={{ color: "forestgreen", fontWeight: "bold" }}>80</span>점입니다.
+                <br />
+                사이드바를 열어 세부 점수를 확인해보세요!
+              </p>
             </div>
           </div>
         </CustomOverlayMap>

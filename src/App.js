@@ -1,28 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-import Cover from './Components/Cover';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route, 
-} from 'react-router-dom'
-import routes from './routes'
+import logo from "./logo.svg";
+import "./App.css";
+import Cover from "./Components/Cover";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import routes from "./routes";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-      </div>
+    <Router basename="">
+      <div className="App"></div>
       <div>
         <Routes>
-          {
-            routes.map((route)=>{
-              return <Route
-                key={route.path}
-                path={route.path}
-                element={route.element}/>
-            })
-          }
+          {routes.map((route) => {
+            return <Route key={route.path} path={route.path} element={route.element} />;
+          })}
         </Routes>
       </div>
     </Router>

@@ -1,58 +1,115 @@
 @font-face {
-  font-family: 'TheJamsil5Bold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+  font-family: "TheJamsil5Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2")
+    format("woff2");
   font-weight: 700;
   font-style: normal;
 }
 
 :root {
   --primary-color: #576cbc;
-  --sub1-color: #0B2447;
-  --sub2-color: #19376D;
+  --sub1-color: #0b2447;
+  --sub2-color: #19376d;
+  --gradientPercent: 50%;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .jamsil {
-  font-family: 'TheJamsil5Bold';
+  font-family: "TheJamsil5Bold";
 }
 
 .jamsil-bold {
-  font-family: 'TheJamsil5Bold';
+  font-family: "TheJamsil5Bold";
   font-weight: 800;
 }
 
 .jamsil-light {
-  font-family: 'TheJamsil1Bold';
+  font-family: "TheJamsil1Bold";
 }
 
 .text-size-title {
-  font-size: 2vw;
+  font-size: 4vw;
 }
 
+.tp {
+  background-color: transparent;
+}
+
+/* .my-primary {
+  background: linear-gradient(305deg, #576cbc, #7388b2, #576cbc);
+  background-size: 240% 240%;
+  animation: gradient-animation 18s ease infinite;
+} */
+
 .my-primary {
-  background-color: #576CBC;
+  background: linear-gradient(305deg, rgb(223, 176, 160), rgb(213, 174, 137), rgb(216, 114, 114));
+  background-size: 240% 240%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 
+
+*/
+
+/* CSS */
+.button-33 {
+  background-color: rgb(241, 235, 235);
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.15) 0 1px 2px,
+    rgba(44, 187, 99, 0.15) 0 2px 4px, rgba(44, 187, 99, 0.15) 0 4px 8px,
+    rgba(44, 187, 99, 0.15) 0 8px 16px, rgba(44, 187, 99, 0.15) 0 16px 32px;
+  color: rgb(235, 85, 85);
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.25) 0 1px 2px,
+    rgba(44, 187, 99, 0.25) 0 2px 4px, rgba(44, 187, 99, 0.25) 0 4px 8px,
+    rgba(44, 187, 99, 0.25) 0 8px 16px, rgba(44, 187, 99, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
 }
 
 .my-sub1 {
-  background-color: #0B2447;
+  background-color: #0b2447;
 }
 
 .my-sub2 {
-  background-color: #19376D;
+  background-color: #19376d;
 }
 
 .img-fit {
@@ -62,7 +119,7 @@ code {
 }
 
 .coverLogo {
-  width: 20vw;
+  width: 30vw;
 }
 
 .cursor-pointer {
@@ -91,12 +148,11 @@ code {
   font-size: 6px;
 }
 
-
 /* 애니메이션 */
 
 @keyframes blinkAnimation {
   from {
-    opacity: 1
+    opacity: 1;
   }
 
   to {
@@ -106,13 +162,11 @@ code {
 
 .blinkAnimation {
   animation-name: blinkAnimation;
-  animation-duration: .7s;
+  animation-duration: 0.7s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-timing-function: ease-out
+  animation-timing-function: ease-out;
 }
-
-
 
 /* 애니메이션 클래스 설정 */
 .cover-transition-enter {
@@ -137,8 +191,6 @@ code {
   transition: opacity 500ms, transform 500ms;
 }
 
-
-
 /* 맵 */
 .customOveray {
   position: relative;
@@ -148,12 +200,12 @@ code {
 }
 
 .infraCircle {
-  transition: width .5s ease-in-out;
+  transition: width 0.5s ease-in-out;
   /* width: 0px; */
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: tomato;
-  opacity: .4;
+  opacity: 0.4;
   z-index: 2;
   /* top: 50%;
   left: 50%; */
