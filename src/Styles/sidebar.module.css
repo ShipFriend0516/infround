@@ -1,54 +1,62 @@
-
 :root {
-    --sideBarWidth: 480px;
+  --sideBarWidth: 480px;
 }
 
 /* 사이드바 */
 .container {
-    background-color: white;
+  background-color: white;
+  width: var(--sideBarWidth);
 }
 .sidebar {
-    overflow-y: scroll;
-
-    background-color: white;
-    border-left: 0px solid #202020;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    transition: 0.4s ease;
-    color: #202020;
-    height: 100%;
-    box-shadow: 0px 0px 15px gray;
-
+  overflow-y: scroll;
+  width: var(--sideBarWidth);
+  background-color: white;
+  border-left: 0px solid #202020;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transition: 0.4s ease;
+  color: #202020;
+  height: 100%;
+  box-shadow: 0px 0px 15px gray;
 }
 .button {
-    position: fixed;
-    top: 45vh;
-    
-    left: var(--sideBarWidth);
-    z-index: 2;
-    /* transition: 0.8s ease; */
-    border: 0px solid #20202000;
-    border-radius:0 40px 40px 0;
-    fill: white;
-    background-color: var(--primary-color);
-    overflow: hidden;
-    cursor: pointer;
+  position: fixed;
+  top: 45vh;
+
+  left: var(--sideBarWidth);
+  z-index: 2;
+  /* transition: 0.8s ease; */
+  border: 0px solid #20202000;
+  border-radius: 0 40px 40px 0;
+  fill: white;
+  background-color: var(--primary-color);
+  overflow: hidden;
+  cursor: pointer;
 }
 .openBtn {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .content {
-    overflow-y: scroll;
-    /* padding: 100px 0px; */
-    position: relative;
-    width: 100%;
-    /* overflow:hidden; */
+  overflow-y: scroll;
+  /* padding: 100px 0px; */
+  position: relative;
+  width: 100%;
+  /* overflow:hidden; */
 }
 .icon {
-    margin: 0;
-    color: #202020;
+  margin: 0;
+  color: #202020;
 }
 
+@media screen and (max-width: 500px) {
+  .sidebar {
+    --sideBarWidth: 320px;
+  }
+
+  .container {
+    --sideBarWidth: 320px;
+  }
+}
