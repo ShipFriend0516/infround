@@ -12,8 +12,8 @@ const Cover = () => {
 
   return (
     <div className=" d-flex container-fluid flex-column cover align-items-center">
-      <div className="w-100 d-flex flex-row align-items-center justify-content-evenly tp">
-        <div className=" d-flex  flex-column">
+      <div className="w-100 d-flex flex-row align-items-center coverFlex tp">
+        <div className="mobileNone d-flex  flex-column">
           <h1 className="mobileNone text-size-title jamsil-bold text-center text-white">
             내 주변{" "}
             <span className="bg-light">

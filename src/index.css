@@ -212,9 +212,17 @@ code {
   /* transform: translate(-100%,-100%); */
 }
 
+.coverFlex {
+  justify-content: space-evenly;
+}
+
 @media (max-width: 768px) {
   .mobileNone {
     display: none;
+  }
+
+  .coverFlex {
+    justify-content: center;
   }
 
   .coverLogo {
@@ -227,5 +235,6 @@ code {
 
   .navbarBtns > button {
     width: 40px;
+    margin-right: 10px;
   }
 }
