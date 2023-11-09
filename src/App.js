@@ -6,7 +6,7 @@ import routes from "./routes";
 
 function App() {
   return (
-    <Router basename="">
+    <Router basename="/infround">
       <div className="App"></div>
       <div>
         <Routes>
