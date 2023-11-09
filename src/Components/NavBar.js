@@ -39,13 +39,13 @@ const NavBar = () => {
               placeholder="장소를 검색해보세요"
               aria-label="Search"
             />
-            <button className="btn btn-outline-success" type="submit">
+            <button className="btn btn-outline-success searchBtn" type="submit">
               Search
             </button>
           </div>
         </form>
-        <div className="d-flex justify-content-end">
-          <button onClick={handleOpenModal} className="btn">
+        <div className="d-flex justify-content-end navbarBtns">
+          <button onClick={handleOpenModal} className="btn navbarBtn">
             <IconContext.Provider value={{ size: 2 + "em" }}>
               <MdAccountCircle />
             </IconContext.Provider>
@@ -54,7 +54,7 @@ const NavBar = () => {
             onClick={() => {
               navigate("/map/setting");
             }}
-            className="btn"
+            className="btn navbarBtn"
           >
             <IconContext.Provider value={{ size: 2 + "em" }}>
               <MdSettings />

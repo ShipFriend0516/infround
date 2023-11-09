@@ -220,4 +220,12 @@ code {
   .coverLogo {
     width: 320px;
   }
+
+  .searchBtn {
+    display: none;
+  }
+
+  .navbarBtns > button {
+    width: 40px;
+  }
 }
