@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/infround/static/css/main.6f54043f.css",
-    "main.js": "/infround/static/js/main.ceabb8e8.js",
+    "main.css": "/infround/static/css/main.c225625c.css",
+    "main.js": "/infround/static/js/main.8059f086.js",
     "static/media/mc1.jpg": "/infround/static/media/mc1.9d3f97fc9a06ee141cf6.jpg",
-    "static/media/map.JPG": "/infround/static/media/map.85b85d1dba0d50c4ac24.JPG",
     "static/media/mc2.jpg": "/infround/static/media/mc2.79be790da45a50574ee7.jpg",
     "static/media/infround-logo.jpg": "/infround/static/media/infround-logo.1fc205b57f336a1d15da.jpg",
+    "static/media/coralLogo.jpg": "/infround/static/media/coralLogo.3a7740d7d3dabea9a63e.jpg",
+    "static/media/transparentLogo.png": "/infround/static/media/transparentLogo.580b5f7853c22913e66d.png",
+    "static/media/transparentLogo2.png": "/infround/static/media/transparentLogo2.e86fd40bc8d89171c625.png",
     "static/media/logo.svg": "/infround/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/infround/index.html",
-    "main.6f54043f.css.map": "/infround/static/css/main.6f54043f.css.map",
-    "main.ceabb8e8.js.map": "/infround/static/js/main.ceabb8e8.js.map"
+    "main.c225625c.css.map": "/infround/static/css/main.c225625c.css.map",
+    "main.8059f086.js.map": "/infround/static/js/main.8059f086.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f54043f.css",
-    "static/js/main.ceabb8e8.js"
+    "static/css/main.c225625c.css",
+    "static/js/main.8059f086.js"
   ]
 }
