@@ -42,50 +42,21 @@ const KakaoMap = () => {
     setInfo(message);
   };
 
-  // const distancePerLevel = (mapRef, position) => {
-  //   let map = mapRef.current;
-  //   let proj = map.getProjection();
+  const [location, setLoacation] = useState(null); // 현재 위치를 저장할 상태
 
-  //   // 지도 중심 좌표를 중심으로 하는 사각형을 구하려고 함
-  //   // center에 지도 중심 말고 원하는 좌표를 넣으면 됨
-  //   let center = position;
-  //   let level = map.getLevel();
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(successHandler, errorHandler); // 성공시 successHandler, 실패시 errorHandler 함수가 실행된다.
+  }, []);
 
-  //   // 지도 레벨마다 m값에 해당하는 화면좌표 수치(px)를 구할 수 있으므로
-  //   // 지도 중심의 좌표를 화면좌표로 투영시켜
-  //   // 화면좌표 기준으로 계산할 예정
-  //   let centerPoint = proj.pointFromCoords(center);
+  const successHandler = (response) => {
+    console.log(response); // coords: GeolocationCoordinates {latitude: 위도, longitude: 경도, …} timestamp: 1673446873903
+    const { latitude, longitude } = response.coords;
+    setLoacation({ latitude, longitude });
+  };
 
-  //   // 3레벨에서 1px이 1m
-  //   // 현재 지도 레벨을 기준으로 m당 px값 스케일(px/m)을 구한다.
-  //   let scale = 1 / Math.pow(2, level - 3);
-
-  //   // 구하고자 하는 사각형 한 변의 길이: 25미터
-  //   let len = 25;
-
-  //   // 12.5m에 해당하는 화면좌표(px) 값
-  //   let radius = (len / 2) * scale;
-
-  //   let swPoint = new daum.maps.Point(
-  //     centerPoint.x - pixelForHalfLen,
-  //     centerPoint.y + pixelForHalfLen
-  //   );
-  //   let nwPoint = new daum.maps.Point(
-  //     centerPoint.x + pixelForHalfLen,
-  //     centerPoint.y - pixelForHalfLen
-  //   );
-
-  //   // 화면좌표를 다시 지도의 좌표계 좌표로 변환
-  //   let sw = proj.coordsFromPoint(swPoint);
-  //   let ne = proj.coordsFromPoint(nwPoint);
-
-  //   let rectangleBounds = new daum.maps.LatLngBounds(sw, ne);
-
-  //   let rectangle = new daum.maps.Rectangle({
-  //     map: map,
-  //     bounds: rectangleBounds,
-  //   });
-  // };
+  const errorHandler = (error) => {
+    console.log(error);
+  };
 
   return (
     <Map
