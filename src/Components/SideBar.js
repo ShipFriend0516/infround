@@ -10,11 +10,19 @@ import { MdLocalConvenienceStore } from "react-icons/md";
 import { MdLocalGasStation } from "react-icons/md";
 import { MdMic, MdMovie } from "react-icons/md";
 import { GiBusStop } from "react-icons/gi";
+import { MdPark } from "react-icons/md";
+import { TbMoodKidFilled } from "react-icons/tb";
+import { IoBook } from "react-icons/io5";
+import { FaPen } from "react-icons/fa";
+import { MdDryCleaning } from "react-icons/md";
+import { IoIosWarning } from "react-icons/io";
+import { FaTrain } from "react-icons/fa6";
 import InfraElement from "./InfraElement";
 
 // 이미지
 import mc1 from "../img/mc1.jpg";
 import mc2 from "../img/mc2.jpg";
+import doojeong from "../img/두정역.JPG";
 
 const SideBar = ({ width = 480, children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -81,13 +89,13 @@ const SideBar = ({ width = 480, children }) => {
       >
         <div className={styles.content + "container py-5 mt-4 px-3 jamsil-light"}>
           <div>
-            <div className="fs-4 jamsil-bold">충청남도 천안시 동남구 신부동</div>
-            <div className="fs-5 jamsil-light">충남 천안시 동남구 만남로 43 1층</div>
+            <div className="fs-4 jamsil-bold">충청남도 천안시 서북구 두정동</div>
+            <div className="fs-5 jamsil-light">두정역 1호선</div>
             <hr className="mt-1" />
             <div className="container text-cente mb-3">
               <div className="row">
                 <div className="col">
-                  <img className="img-thumbnail" src={mc2}></img>
+                  <img className="img-thumbnail" src={doojeong}></img>
                 </div>
               </div>
             </div>
@@ -124,6 +132,29 @@ const SideBar = ({ width = 480, children }) => {
             <div>
               <p className="jamsil-bold">주요 인프라 시설</p>
               <div className="border border-black p-2">
+                <small>교육 시설</small>
+                <hr className="mt-1" />
+                <InfraElement
+                  infraName="어린이집"
+                  infraScore={16}
+                  infraIcon={<TbMoodKidFilled />}
+                />
+                <InfraElement infraName="도서관" infraScore={1} infraIcon={<IoBook />} />
+                <InfraElement infraName="학원" infraScore={6} infraIcon={<FaPen />} />
+                <small>의료 시설</small>
+                <hr className="mt-1" />
+                <InfraElement infraName="병원" infraScore={8} infraIcon={<MdPark />} />
+                <InfraElement infraName="약국" infraScore={5} infraIcon={<MdPark />} />
+                <InfraElement
+                  infraName="소아과가 부족합니다."
+                  infraScore={5}
+                  infraIcon={<IoIosWarning color="orange" />}
+                  infraType="warn"
+                />
+
+                <small>조경 시설</small>
+                <hr className="mt-1" />
+                <InfraElement infraName="공원" infraScore={4} infraIcon={<MdPark />} />
                 <small>생활 필수 시설</small>
                 <hr className="mt-1" />
                 <InfraElement
@@ -132,18 +163,20 @@ const SideBar = ({ width = 480, children }) => {
                   infraIcon={<MdLocalConvenienceStore />}
                 />
                 <InfraElement infraName="주유소" infraScore={6} infraIcon={<MdLocalGasStation />} />
+                <InfraElement infraName="세탁소" infraScore={2} infraIcon={<MdDryCleaning />} />
                 <small>교통 시설</small>
                 <hr className="mt-1" />
-                <InfraElement infraName="버스 정류장" infraScore={16} infraIcon={<GiBusStop />} />
+                <InfraElement infraName="수도권 지하철역" infraScore={11} infraIcon={<FaTrain />} />
+                <InfraElement infraName="버스 정류장" infraScore={11} infraIcon={<GiBusStop />} />
 
                 <small>유흥 시설</small>
                 <hr className="mt-1" />
                 <InfraElement infraName="코인 노래방" infraScore={4} infraIcon={<MdMic />} />
-                <InfraElement infraName="영화관" infraScore={8} infraIcon={<MdMovie />} />
+                <InfraElement infraName="영화관" infraScore={1} infraIcon={<MdMovie />} />
               </div>
             </div>
             <div className="d-flex container-fluid my-3 justify-content-between align-items-center">
-              <div className="fs-4">연락처 010-0000-0000</div>
+              <div className="fs-5">연락처 010-0000-0000</div>
               <button className="btn btn-secondary">구매 상담</button>
             </div>
           </div>

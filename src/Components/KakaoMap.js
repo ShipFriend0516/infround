@@ -97,7 +97,7 @@ const KakaoMap = () => {
         <CustomOverlayMap className="customOverlay" position={position}>
           <Circle
             center={position}
-            radius={200}
+            radius={500}
             fillColor={"#FF8080"}
             fillOpacity={0.4}
             strokeWeight={0}

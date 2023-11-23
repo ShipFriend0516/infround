@@ -21,7 +21,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="navbar bg-body-tertiary z-3">
+    <nav className="navbar z-3 bg-body-tertiary" style={{ boxShadow: "0px 2px 5px lightgray" }}>
       <div className="container-fluid d-flex justify-content-between align-items-center">
         <form className="d-flex" role="search">
           <div className="d-flex">
@@ -39,7 +39,7 @@ const NavBar = () => {
               placeholder="장소를 검색해보세요"
               aria-label="Search"
             />
-            <button className="btn btn-outline-success searchBtn" type="submit">
+            <button className="btn btn-outline-dark searchBtn" type="submit">
               Search
             </button>
           </div>

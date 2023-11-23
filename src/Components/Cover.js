@@ -1,7 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import logoImage from "../img/infround-logo.jpg";
-import transparentLogo from "../img/transparentLogo.png";
-import transparentLogo2 from "../img/transparentLogo2.png";
+import transparentLogo2 from "../img/coral-infround-logo.png";
 
 const Cover = () => {
   const navigate = useNavigate();
@@ -35,7 +33,7 @@ const Cover = () => {
       >
         바로 시작하기
       </button>
-      <div className="footer">@2023 All rights reserved.</div>
+      <div className="footer">@2023 All rights reserved. Infround</div>
     </div>
   );
 };
