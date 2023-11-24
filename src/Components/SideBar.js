@@ -17,6 +17,9 @@ import { FaPen } from "react-icons/fa";
 import { MdDryCleaning } from "react-icons/md";
 import { IoIosWarning } from "react-icons/io";
 import { FaTrain } from "react-icons/fa6";
+import { FaHospitalAlt } from "react-icons/fa";
+import { BsCapsule } from "react-icons/bs";
+
 import InfraElement from "./InfraElement";
 
 // 이미지
@@ -143,8 +146,8 @@ const SideBar = ({ width = 480, children }) => {
                 <InfraElement infraName="학원" infraScore={6} infraIcon={<FaPen />} />
                 <small>의료 시설</small>
                 <hr className="mt-1" />
-                <InfraElement infraName="병원" infraScore={8} infraIcon={<MdPark />} />
-                <InfraElement infraName="약국" infraScore={5} infraIcon={<MdPark />} />
+                <InfraElement infraName="병원" infraScore={8} infraIcon={<FaHospitalAlt />} />
+                <InfraElement infraName="약국" infraScore={5} infraIcon={<BsCapsule />} />
                 <InfraElement
                   infraName="소아과가 부족합니다."
                   infraScore={5}
