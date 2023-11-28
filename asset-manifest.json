@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/infround/static/css/main.2b5aa55c.css",
-    "main.js": "/infround/static/js/main.f1e6d6ea.js",
+    "main.css": "/infround/static/css/main.3d0c1b95.css",
+    "main.js": "/infround/static/js/main.2df60901.js",
     "static/media/coral-infround-logo.png": "/infround/static/media/coral-infround-logo.3fa20f09e6dc784745b4.png",
     "static/media/두정역.JPG": "/infround/static/media/두정역.9903464dc09d56c166fa.JPG",
     "static/media/mc1.jpg": "/infround/static/media/mc1.9d3f97fc9a06ee141cf6.jpg",
@@ -10,11 +10,11 @@
     "static/media/coralLogo.jpg": "/infround/static/media/coralLogo.3a7740d7d3dabea9a63e.jpg",
     "static/media/logo.svg": "/infround/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/infround/index.html",
-    "main.2b5aa55c.css.map": "/infround/static/css/main.2b5aa55c.css.map",
-    "main.f1e6d6ea.js.map": "/infround/static/js/main.f1e6d6ea.js.map"
+    "main.3d0c1b95.css.map": "/infround/static/css/main.3d0c1b95.css.map",
+    "main.2df60901.js.map": "/infround/static/js/main.2df60901.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b5aa55c.css",
-    "static/js/main.f1e6d6ea.js"
+    "static/css/main.3d0c1b95.css",
+    "static/js/main.2df60901.js"
   ]
 }
